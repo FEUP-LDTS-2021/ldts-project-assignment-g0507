@@ -16,6 +16,8 @@ This project was developed for LDTS 2021-22 by:
 
 This project is being developed following the **_Feature Branches Workflow_**
 
+This is done by doing all feature development under feature branches which then merge into the **developing** branch. This is in order to facilitate collaboration between the various contributors and to not disturb the main codebase by encapsulating the **main** branch only for **releases**.
+
 <p align="center" justify="center">
   <img src="images/featurebranches.png"/>
 </p>
@@ -23,9 +25,16 @@ This project is being developed following the **_Feature Branches Workflow_**
   <b><i>Fig 1. Feature branches workflow</i></b>
 </p>
 
-This is done as the previous image illustrates, by doing all feature development under feature branches which then merge into the **developing** branch. This is in order to facilitate collaboration between the various contributors and to not disturb the main codebase by encapsulating the **main** branch only for **releases**. 
+Feature branches will be named according to the card number in our Project page, this is also is done in order to improve the workflow between the various contributors, for example development for card #9 would be done under branch CA-09.
 
-All release will also be named following the semantic version spec. See [https://semver.org]()
+<p align="center" justify="center">
+  <img src="images/projectboard.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 1. Github Project board</i></b>
+</p>
+
+All releases will also be named following the semantic version spec. See [https://semver.org]()
 ## Planned Features
 
 - **Connected Menus** - The player can browse through several menus. (Play, Options, Quit).
