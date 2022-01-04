@@ -3,7 +3,7 @@
 
 ## Game Description
 
-**ASCII Breaker** is a brick breaker based game where the player must smash a wall of bricks by deflecting a boucing ball with a paddle which may only be moved horizontally. The player starts with 3 lives and loses one each time the ball hits the bottom of the screen.
+**ASCII Breaker** is a brick breaker based game where the player must smash a wall of bricks by deflecting a bouncing ball with a paddle which may only be moved horizontally. The player starts with 3 lives and loses one each time the ball hits the bottom of the screen.
 The variety of levels will have increased difficulty by adding different kinds of bricks, changing ball speed and adding special power ups and handicaps for the player.
 
 This project was developed for LDTS 2021-22 by:
@@ -12,8 +12,7 @@ This project was developed for LDTS 2021-22 by:
 - **Andre Cruz** (*up201705768*@fc.up.pt) </LI>
 - **Angy da Cruz** (*up202007253*@fc.up.pt) </LI>
 
-
-A more detailed version of this description will be made available later.
+A more detailed version of this description is available [here](./docs/README.md).
 
 ## Gameplay
 
