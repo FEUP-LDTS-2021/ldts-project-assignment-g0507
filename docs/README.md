@@ -31,7 +31,7 @@ Feature branches will be named according to the card number in our Project page,
   <img src="images/projectboard.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 1. Github Project board</i></b>
+  <b><i>Fig 2. Github Project board</i></b>
 </p>
 
 All releases will also be named following the semantic version spec. See [https://semver.org]()
@@ -56,15 +56,21 @@ We have applied the **_Factory Method_** pattern. This pattern lets us define an
   <img src="images/UML/brickgeneration.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 2. Brick Generation UML</i></b>
+  <b><i>Fig 3. Brick Generation UML</i></b>
 </p>
 
 #### Implementation:
 
 
 #### Consequences:
+Some benefits of this implementation are:
+- Avoiding tight coupling the creator and product of these classes.
+- Extensibility. It is possible to implement new products in the future without altering source code.
+- Straightforward testing. We can test all creator classes individually and independently of the class that is being called out.
 
 ## Known Code Smells and Refactoring Suggestion
+#### **Brick Generation**
+We are using the Factory method Pattern for this implementation, which lets us more easily expand our number of Bricks by adding new classes, however the majority of these Brick classes only contain an HP variable and could also easily simply be a method inside the creator instead of a Class by itself.
 
 ## Testing
 
