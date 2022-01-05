@@ -69,7 +69,10 @@ For this we decided to follow the **_Model-View-Controller_** pattern for implem
 
 
 #### Consequences:
-
+Some benefits of this implementation are:
+- App logic is separated from the GUI
+- Easier unit testing
+- Increased scalability. Modifications are easier to implement due to responsibility separation
 ### Brick Generation
 
 #### Problem in Context:
