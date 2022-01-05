@@ -25,7 +25,7 @@ This is done by doing all feature development under feature branches which then 
   <b><i>Fig 1. Feature branches workflow</i></b>
 </p>
 
-Feature branches will be named according to the card number in our Project page, this is also is done in order to improve the workflow between the various contributors, for example development for card #9 would be done under branch CA-09.
+Feature branches will be named according to the card number in our Project page, this is also done in order to improve the workflow between the various contributors, for example development for card #9 would be done under branch CA-09.
 
 <p align="center" justify="center">
   <img src="images/projectboard.png"/>
@@ -45,6 +45,26 @@ All releases will also be named following the semantic version spec. See [https:
 
 ## Design
 
+### General Structure
+
+#### Problem in Context:
+Our first decision when planning the structure of the game, was to define the **_Architectural Pattern_** that would be used. Since our game will be heavily reliant on a GUI, data and game states, we needed a model that would let us encapsulate these different components and facilitate communication between them.
+
+#### Pattern:
+For this we decided to follow the **_Model-View-Controller_** pattern for implementation, which lets us separate the application's logic from its interface, where we have the **_Model_** as the brain of the app containing all the logic for it, the **_View_** which simply presents data from the model to the user and the **_Controller_** which is the communication point between the first two components and handles all requests.
+
+<p align="center" justify="center">
+  <img src="images/UML/MVC-Design-Pattern.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 3. MVC Design Pattern</i></b>
+</p>
+
+#### Implementation:
+
+
+#### Consequences:
+
 ### Brick Generation
 
 #### Problem in Context:
@@ -56,7 +76,7 @@ We have applied the **_Factory Method_** pattern. This pattern lets us define an
   <img src="images/UML/brickgeneration.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 3. Brick Generation UML</i></b>
+  <b><i>Fig 4. Brick Generation UML</i></b>
 </p>
 
 #### Implementation:
