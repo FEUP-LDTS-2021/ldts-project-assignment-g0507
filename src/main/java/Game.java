@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Game {
     Screen screen;
-
+    Paddle paddle;
     public Game() throws IOException {
 
         try {
@@ -20,6 +20,7 @@ public class Game {
             screen.setCursorPosition(null);
             screen.startScreen();
 
+            paddle = new Paddle(0,0);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -27,12 +28,14 @@ public class Game {
 
     private void draw() throws IOException {
         screen.clear();
+        paddle.draw(screen.newTextGraphics());
         screen.refresh();
     }
 
 
     public void run() throws IOException {
         boolean running = true;
+        draw();
         while (running) {
             KeyStroke key = screen.readInput();
             System.out.println(key.getKeyType());
