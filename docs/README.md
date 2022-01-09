@@ -45,7 +45,7 @@ All releases will also be named following the semantic version spec. See [https:
   <img src="images/gameplay.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 2. Gameplay</i></b>
+  <b><i>Fig 3. Gameplay</i></b>
 </p>
 
 - **Connected Menus** - The player can browse through several menus. (Play, Options, Quit).
@@ -53,7 +53,7 @@ All releases will also be named following the semantic version spec. See [https:
   <img src="images/mainmenu.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 2. Menu screen</i></b>
+  <b><i>Fig 4. Menu screen</i></b>
 </p>
 
 - **Level generation** - The player can play through the prebuilt levels or a randomly generated level.
@@ -61,7 +61,7 @@ All releases will also be named following the semantic version spec. See [https:
   <img src="images/playsubmenu.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 2. Play submenu screen</i></b>
+  <b><i>Fig 5. Play submenu screen</i></b>
 </p>
 
 - **Collision detection** - Collisions between all game elements are verified (Paddle, Ball, Bricks, Game border).
@@ -82,7 +82,7 @@ For this we decided to follow the **_Model-View-Controller_** pattern for implem
   <img src="images/UML/MVC-Design-Pattern.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 3. MVC Design Pattern</i></b>
+  <b><i>Fig 6. MVC Design Pattern</i></b>
 </p>
 
 #### Implementation:
@@ -104,7 +104,7 @@ We have applied the **_Factory Method_** pattern. This pattern lets us define an
   <img src="images/UML/brickgeneration.png"/>
 </p>
 <p align="center">
-  <b><i>Fig 4. Brick Generation UML</i></b>
+  <b><i>Fig 7. Brick Generation UML</i></b>
 </p>
 
 #### Implementation:
@@ -123,6 +123,13 @@ We are using the Factory method Pattern for this implementation, which lets us m
 ## Testing
 
 ### Test coverage report
+
+<p align="center" justify="center">
+  <img src="images/testcoverage.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 8. Test coverage</i></b>
+</p>
 
 ### Mutation testing report
 
