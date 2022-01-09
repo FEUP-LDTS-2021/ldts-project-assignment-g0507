@@ -1,13 +1,14 @@
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.swing.text.Position;
-
 public class PositionTest {
+    Position position;
 
-    @BeforeAll
-    Position position = new Position(5,5);
+    @BeforeEach
+    public void setUp() {
+        position = new Position(5,5);
+    }
 
     @Test
     public void getX(){
@@ -16,6 +17,7 @@ public class PositionTest {
 
     @Test
     public void getY(){
+        int x = position.getX();
         Assertions.assertEquals(5, position.getX());
     }
 
