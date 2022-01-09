@@ -41,9 +41,29 @@ Feature branches will be named according to the card number in our Project page,
 All releases will also be named following the semantic version spec. See [https://semver.org]()
 
 ## Planned Features
+<p align="center" justify="center">
+  <img src="images/gameplay.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 2. Gameplay</i></b>
+</p>
 
 - **Connected Menus** - The player can browse through several menus. (Play, Options, Quit).
+<p align="center" justify="center">
+  <img src="images/mainmenu.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 2. Menu screen</i></b>
+</p>
+
 - **Level generation** - The player can play through the prebuilt levels or a randomly generated level.
+<p align="center" justify="center">
+  <img src="images/playsubmenu.png"/>
+</p>
+<p align="center">
+  <b><i>Fig 2. Play submenu screen</i></b>
+</p>
+
 - **Collision detection** - Collisions between all game elements are verified (Paddle, Ball, Bricks, Game border).
 - **Life system** - Players have a finite mount of lives and when they reach 0 its Game Over.
 - **Object customization** - The player can select different character types for several of the game's elements (Paddle, Ball, Bricks)
