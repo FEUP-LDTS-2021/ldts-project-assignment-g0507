@@ -32,20 +32,21 @@ public class Game {
         screen.refresh();
     }
 
-
     public void run() throws IOException {
         boolean running = true;
         draw();
         while (running) {
             KeyStroke key = screen.readInput();
             System.out.println(key.getKeyType());
-            if((key.getKeyType() == KeyType.Character && key.getCharacter() == 'q') || (key.getKeyType() == KeyType.EOF)) {
-                running = false;
-            }
-            else {
-                draw();
-            }
+            if((key.getKeyType() == KeyType.Character && key.getCharacter() == 'q') || (key.getKeyType() == KeyType.EOF)) running = false;
+            if(key.getCharacter() == 'a') movePaddle(paddle.moveLeft());
+            if(key.getCharacter() == 'd') movePaddle(paddle.moveRight());
+            draw();
         }
         screen.close();
+    }
+
+    private void movePaddle(Position position) {
+        paddle.setPosition(position);
     }
 }

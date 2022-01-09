@@ -19,4 +19,8 @@ public class Paddle {
     public void draw(TextGraphics graphics) {
         graphics.putString(new TerminalPosition(position.getX(), position.getY()), "XXXXXXXXXX");
     }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
 }
