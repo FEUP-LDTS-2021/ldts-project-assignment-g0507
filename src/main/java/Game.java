@@ -1,3 +1,4 @@
+import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
@@ -8,19 +9,21 @@ import com.googlecode.lanterna.terminal.Terminal;
 import java.io.IOException;
 
 public class Game {
+
     Screen screen;
     Paddle paddle;
+
     public Game() throws IOException {
 
         try {
-            DefaultTerminalFactory defaultTerminalFactory = new DefaultTerminalFactory();
+            DefaultTerminalFactory defaultTerminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(new TerminalSize(80,40));
             Terminal terminal = defaultTerminalFactory.createTerminal();
             screen = new TerminalScreen(terminal);
 
             screen.setCursorPosition(null);
             screen.startScreen();
 
-            paddle = new Paddle(0,0);
+            paddle = new Paddle(35,35);
         } catch (IOException e) {
             e.printStackTrace();
         }
