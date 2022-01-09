@@ -125,7 +125,7 @@ We are using the Factory method Pattern for this implementation, which lets us m
 ### Test coverage report
 
 <p align="center" justify="center">
-  <img src="images/UML/testcoverage.png"/>
+  <img src="images/testcoverage.png"/>
 </p>
 <p align="center">
   <b><i>Fig 8. Test coverage</i></b>
