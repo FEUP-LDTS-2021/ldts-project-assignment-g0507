@@ -1,8 +1,14 @@
-package state;
+package com.state;
 
+import com.Game;
+import com.googlecode.lanterna.gui2.Button;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class GameStateTest {
     private GameState gameState;
