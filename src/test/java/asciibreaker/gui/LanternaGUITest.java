@@ -24,10 +24,9 @@ public class LanternaGUITest {
                 new Position(10,10),
                 new Position(20,20),
                 "#0FFFFF",
-                "FFFFFF");
+                "#FFFFFF");
 
         lanternaGUI.drawButton(button);
         Assertions.assertEquals(" ", lanternaGUI.getScreen().getBackCharacter(10, 10).getCharacterString());
-        Assertions.assertEquals(TextColor.Factory.fromString("#0FFFFF"), lanternaGUI.getScreen().getBackCharacter(10,10).getBackgroundColor());
     }
 }

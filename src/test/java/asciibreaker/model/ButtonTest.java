@@ -19,7 +19,7 @@ public class ButtonTest {
         upperLeft = new Position(10,10);
         lowerRight = new Position(20,20);
         buttonColor = "#0FFFFF";
-        textColor = "FFFFFF";
+        textColor = "#FFFFFF";
         button = new Button(buttonText, upperLeft, lowerRight, buttonColor, textColor);
     }
 
