@@ -1,6 +1,8 @@
 package asciibreaker;
 
 import asciibreaker.gui.LanternaGUI;
+import asciibreaker.model.Paddle;
+import asciibreaker.model.Position;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
 

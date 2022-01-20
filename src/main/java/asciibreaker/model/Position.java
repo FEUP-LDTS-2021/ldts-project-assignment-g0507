@@ -1,4 +1,4 @@
-package asciibreaker;
+package asciibreaker.model;
 
 public class Position {
 

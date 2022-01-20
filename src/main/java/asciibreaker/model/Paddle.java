@@ -1,4 +1,4 @@
-package asciibreaker;
+package asciibreaker.model;
 
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.graphics.TextGraphics;
@@ -25,5 +25,4 @@ public class Paddle {
     public void setPosition(Position position) {
         this.position = position;
     }
-
 }
