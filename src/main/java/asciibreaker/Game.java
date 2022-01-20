@@ -1,15 +1,15 @@
-package com;
+package asciibreaker;
 
+import asciibreaker.gui.LanternaGUI;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.input.KeyType;
-
-import com.gui.LanternaGUI;
 
 import java.io.IOException;
 
 public class Game {
     private final LanternaGUI GUI;
-    Paddle paddle;
+    private boolean running = true;
+    protected Paddle paddle;
 
     public Game() throws IOException {
         GUI = new LanternaGUI();
@@ -27,7 +27,6 @@ public class Game {
     }
 
     public void run() throws IOException {
-        boolean running = true;
         draw();
         while (running) {
             KeyStroke key = GUI.getScreen().readInput();

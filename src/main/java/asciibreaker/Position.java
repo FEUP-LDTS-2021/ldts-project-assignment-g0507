@@ -1,4 +1,4 @@
-package com;
+package asciibreaker;
 
 public class Position {
 
