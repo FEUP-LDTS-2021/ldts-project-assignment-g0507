@@ -4,10 +4,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class ButtonTest {
 
     private Button button;
-    private String buttonText;
+    private List<String> buttonText;
     private Position upperLeft;
     private Position lowerRight;
     private String buttonColor;
@@ -15,7 +18,8 @@ public class ButtonTest {
 
     @BeforeEach
     void setUp(){
-        buttonText = "test text";
+        buttonText = new ArrayList<>();
+        buttonText.add("Test");
         upperLeft = new Position(10,10);
         lowerRight = new Position(20,20);
         buttonColor = "#0FFFFF";

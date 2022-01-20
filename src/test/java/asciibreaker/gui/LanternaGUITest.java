@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LanternaGUITest {
 
@@ -20,7 +22,9 @@ public class LanternaGUITest {
 
     @Test
     void TestDrawButton() {
-        Button button = new Button("test",
+        List<String> text = new ArrayList<>();
+        text.add("test");
+        Button button = new Button(text,
                 new Position(10,10),
                 new Position(20,20),
                 "#0FFFFF",

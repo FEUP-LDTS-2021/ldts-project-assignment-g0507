@@ -51,18 +51,22 @@ public class LanternaGUI {
 
     public void drawButton(Button button) {
 
-        int yOffset=(button.getUpperLeft().getY()-button.getLowerRight().getY()/2);
-        int xOffset=(button.getLowerRight().getX()-button.getUpperLeft().getX()-button.getButtonText().length())/2;
+        int yOffset=(button.getUpperLeft().getY()-button.getLowerRight().getY()-button.getButtonText().size())/2;
+        int xOffset=(button.getLowerRight().getX()-button.getUpperLeft().getX()-button.getButtonText().get(0).length())/2;
 
         TextGraphics graphics = screen.newTextGraphics();
 
-        for(int i = button.getUpperLeft().getX(); i <= button.getLowerRight().getX(); i++ ) {
-            for (int j = terminalSize.getRows() - button.getUpperLeft().getY(); j <= terminalSize.getRows() - button.getLowerRight().getY(); j++) {
+        graphics.setForegroundColor(TextColor.Factory.fromString(button.getTextColor()));
+
+        for(int i = button.getUpperLeft().getX(); i <= button.getLowerRight().getX(); i++ )
+            for(int j = terminalSize.getRows()-button.getUpperLeft().getY(); j <= terminalSize.getRows()-button.getLowerRight().getY(); j++)
                 graphics.putString(new TerminalPosition(i, j), " ");
-                graphics.setForegroundColor(TextColor.Factory.fromString(button.getTextColor()));
+
+        for(int i=0;i<button.getButtonText().size();i++){
+            if(button.getButtonText().get(i).equals(" ")){
+                graphics.putString(  button.getUpperLeft().getX() + xOffset, terminalSize.getRows()-button.getUpperLeft().getY()+yOffset +i,button.getButtonText().get(i),SGR.BOLD);
             }
         }
 
-        graphics.putString(button.getUpperLeft().getX() + xOffset, terminalSize.getRows()-button.getUpperLeft().getY()+yOffset, button.getButtonText(),SGR.BOLD);
     }
 }
