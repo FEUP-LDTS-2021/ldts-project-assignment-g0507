@@ -20,12 +20,12 @@ public class ButtonTest {
         lowerRight = new Position(20,20);
         buttonColor = "#0FFFFF";
         textColor = "FFFFFF";
-        button = new Button(buttonText, upperLeft, lowerRight, buttonColor, textColor));
+        button = new Button(buttonText, upperLeft, lowerRight, buttonColor, textColor);
     }
 
     @Test
     void testGetButtonText() {
-        Assertions.assertEquals(buttonText, button.buttonText);
+        Assertions.assertEquals(buttonText, button.getButtonText());
     }
 
     @Test
@@ -45,7 +45,7 @@ public class ButtonTest {
 
     @Test
     void getTextColor() {
-        Assertions.assertEquals(textColorColor, button.getTextColor());
+        Assertions.assertEquals(textColor, button.getTextColor());
     }
 
 }
