@@ -1,3 +1,5 @@
+package asciibreaker.model;
+
 public class Position {
 
     private int x;

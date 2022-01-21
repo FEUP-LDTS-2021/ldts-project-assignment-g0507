@@ -1,7 +1,7 @@
 # LDTS_T05_G07
 # ASCII Breaker
 
-## Game Description
+## com.Game Description
 
 **ASCII Breaker** is a brick breaker based game where the player must smash a wall of bricks by deflecting a bouncing ball with a paddle which may only be moved horizontally. The player starts with 3 lives and loses one each time the ball hits the bottom of the screen.
 The variety of levels will have increased difficulty by adding different kinds of bricks, changing ball speed and adding special power ups and handicaps for the player.
