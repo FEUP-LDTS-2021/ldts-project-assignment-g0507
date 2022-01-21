@@ -2,7 +2,6 @@ package asciibreaker.gui;
 
 import asciibreaker.model.Button;
 import asciibreaker.model.Position;
-import com.googlecode.lanterna.TextColor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,7 +20,7 @@ public class LanternaGUITest {
     }
 
     @Test
-    void TestDrawButton() {
+    void testDrawButton() {
         List<String> text = new ArrayList<>();
         text.add("test");
         Button button = new Button(text,

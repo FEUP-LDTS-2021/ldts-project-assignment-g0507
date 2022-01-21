@@ -48,8 +48,22 @@ public class ButtonTest {
     }
 
     @Test
-    void getTextColor() {
+    void testGetTextColor() {
         Assertions.assertEquals(textColor, button.getTextColor());
+    }
+
+    @Test
+    void testIsActive() {
+        Assertions.assertFalse(button.isActive());
+    }
+
+    @Test
+    void testSetActive() {
+        Assertions.assertFalse(button.isActive());
+        button.setActive(true);
+        Assertions.assertTrue(button.isActive());
+        button.setActive(false);
+        Assertions.assertFalse(button.isActive());
     }
 
 }

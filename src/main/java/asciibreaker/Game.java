@@ -1,21 +1,22 @@
 package asciibreaker;
 
+import asciibreaker.gui.GUI;
 import asciibreaker.gui.LanternaGUI;
-import asciibreaker.model.Paddle;
-import asciibreaker.model.Position;
-import com.googlecode.lanterna.input.KeyStroke;
-import com.googlecode.lanterna.input.KeyType;
+import asciibreaker.model.StartMenu;
+import asciibreaker.state.StartMenuState;
+import asciibreaker.state.State;
+
 
 import java.io.IOException;
 
 public class Game {
-    private final LanternaGUI GUI;
+    private final GUI GUI;
+    private State state;
     private boolean running = true;
-    protected Paddle paddle;
 
     public Game() throws IOException {
         GUI = new LanternaGUI();
-        paddle = new Paddle(35,35);
+        this.state = new StartMenuState(new StartMenu(this));
     }
 
     public static void main(String[] args) throws IOException {
@@ -23,28 +24,29 @@ public class Game {
         game.run();
     }
 
-    private void draw() throws IOException {
-        paddle.draw(GUI.getScreen().newTextGraphics());
-        GUI.refresh();
-    }
-
     public void run() throws IOException {
-        draw();
+        int fps = 60;
+        int frameTime = 1000/fps;
+
         while (running) {
-            KeyStroke key = GUI.getScreen().readInput();
-            if(key.getCharacter() != null) {
-                System.out.println(key.getKeyType() + " " + key.getCharacter());
-                if ((key.getKeyType() == KeyType.Character && key.getCharacter() == 'q') || (key.getKeyType() == KeyType.EOF))
-                    running = false;
-                if (key.getCharacter() == 'a') movePaddle(paddle.moveLeft());
-                if (key.getCharacter() == 'd') movePaddle(paddle.moveRight());
+            long time = System.currentTimeMillis();
+
+            state.step(this, GUI, time);
+            System.out.println();
+            long elapsedTime = System.currentTimeMillis() - time;
+            long sleepTime = frameTime - elapsedTime;
+
+            try {
+                if (sleepTime > 0) Thread.sleep(sleepTime);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-            draw();
+
         }
         GUI.close();
     }
 
-    private void movePaddle(Position position) {
-        paddle.setPosition(position);
+    public void end() {
+        running = false;
     }
 }
