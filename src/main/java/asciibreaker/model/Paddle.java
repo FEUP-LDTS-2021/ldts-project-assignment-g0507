@@ -14,6 +14,9 @@ public class Paddle {
     public void setPosition(Position position) {
         this.position = position;
     }
-
+    public void reset() {
+        position.setX(40);
+        position.setY(40);
+    }
 }
 
