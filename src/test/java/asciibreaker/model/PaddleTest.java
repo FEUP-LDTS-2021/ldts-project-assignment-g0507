@@ -24,4 +24,5 @@ class PaddleTest {
     void setPosition() {
         Assertions.assertEquals(5,5);
     }
+
 }

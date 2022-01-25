@@ -11,5 +11,9 @@ public class Paddle {
     public Position moveLeft() {
         return new Position(position.getX() - 1, position.getY());
     }
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
 }
 
