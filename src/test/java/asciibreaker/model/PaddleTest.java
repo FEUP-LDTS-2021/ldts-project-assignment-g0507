@@ -24,5 +24,10 @@ class PaddleTest {
     void setPosition() {
         Assertions.assertEquals(5,5);
     }
-
+    @Test
+    void testReset(){
+        Position position = new Position(30,30);
+        position.reset();
+        Assertions.assertEquals(position, new Position(40,40));
+    }
 }
