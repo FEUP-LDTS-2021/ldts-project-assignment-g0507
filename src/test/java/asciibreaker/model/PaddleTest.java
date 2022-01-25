@@ -16,4 +16,8 @@ class PaddleTest {
     void moveRight() {
         Assertions.assertEquals(6, paddle.moveRight().getX());
     }
+    @Test
+    void moveLeft() {
+        Assertions.assertEquals(4, paddle.moveLeft().getX());
+    }
 }
