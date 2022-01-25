@@ -20,4 +20,8 @@ class PaddleTest {
     void moveLeft() {
         Assertions.assertEquals(4, paddle.moveLeft().getX());
     }
+    @Test
+    void setPosition() {
+        Assertions.assertEquals(5,5);
+    }
 }
