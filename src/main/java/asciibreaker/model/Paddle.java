@@ -5,7 +5,11 @@ public class Paddle {
     public Paddle(int x, int y) {
         position = new Position(x, y);
     }
-    
 
+
+    public Position moveRight() {
+        return new Position(position.getX() + 1, position.getY());
+        
+    }
 }
 
