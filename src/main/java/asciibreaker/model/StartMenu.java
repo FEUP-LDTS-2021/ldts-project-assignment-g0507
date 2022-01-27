@@ -2,6 +2,7 @@ package asciibreaker.model;
 
 import asciibreaker.Game;
 import asciibreaker.controller.command.ExitCommand;
+import asciibreaker.controller.command.PlayCommand;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class StartMenu extends Menu{
         buttons.add(new Button(play,  new Position(20, 20), new Position(60, 18), "#f9aa95","#0062d8"));
         buttons.add(new Button(settings, new Position(20,  16),  new Position(60, 14),"#f9aa95","#0062d8"));
         buttons.add(new Button(exit, new Position(20,  12),  new Position(60, 10),"#f9aa95","#0062d8"));
-        buttons.get(0).setAction(new ExitCommand(game));
+        buttons.get(0).setAction(new PlayCommand(game));
         buttons.get(1).setAction(new ExitCommand(game));
         buttons.get(2).setAction(new ExitCommand(game));
         buttons.get(0).setActive(true);
