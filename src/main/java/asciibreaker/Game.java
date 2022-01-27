@@ -46,6 +46,11 @@ public class Game {
         GUI.close();
     }
 
+    public void changeState(State state){
+        this.state = state;
+    }
+    public State getState(){ return state;}
+
     public void end() {
         running = false;
     }
