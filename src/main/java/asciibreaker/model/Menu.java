@@ -17,10 +17,6 @@ public abstract class Menu {
         selected = 0;
     }
 
-    public void addOption(Button newButton){
-        buttons.add(newButton);
-    }
-
     public List<Button> getOptions(){
         return this.buttons;
     }

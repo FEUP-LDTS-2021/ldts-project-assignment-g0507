@@ -33,10 +33,7 @@ public class StartMenuStateTester {
         void testGetModel(){
             Assertions.assertEquals(startMenu,test.getModel());
         }
-        @Test
-        void testGetViewer(){
-            Assertions.assertEquals(new StartMenuViewer(startMenu).getModel(), test.getViewer().getModel());
-        }
+
         @Test
         void testGetController(){
             StartMenuController controller = new StartMenuController(startMenu);

@@ -1,22 +1,40 @@
 package asciibreaker.model;
 
 public class Paddle {
-    public Position position;
-    public Paddle(int x, int y) {
-        position = new Position(x, y);
+    private Position upperLeft;
+    private Position lowerRight;
+    private String paddleColor;
+    private int lives;
+
+
+    public Paddle(Position upperLeft, Position lowerRight, String paddleColor) {
+        this.upperLeft = upperLeft;
+        this.lowerRight = lowerRight;
+        this.paddleColor = paddleColor;
+        this.lives= 3;
     }
-    public Position moveRight() {
-        return new Position(position.getX() + 1, position.getY());
+
+    public void moveRight() {
+        upperLeft.setX(upperLeft.getX() + 5);
+        lowerRight.setX(lowerRight.getX() + 5);
     }
-    public Position moveLeft() {
-        return new Position(position.getX() - 1, position.getY());
+
+    public void moveLeft() {
+        upperLeft.setX(upperLeft.getX() - 5);
+        lowerRight.setX(lowerRight.getX() - 5);
     }
-    public void setPosition(Position position) {
-        this.position = position;
+
+    public Position getUpperLeft() {
+        return upperLeft;
     }
-    public void reset() {
-        position.setX(40);
-        position.setY(40);
+
+    public Position getLowerRight() {
+        return lowerRight;
+    }
+
+    public int getLives() { return lives; }
+
+    public String getPaddleColor() { return this.paddleColor;
     }
 }
 

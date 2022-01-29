@@ -1,6 +1,7 @@
 package asciibreaker.gui;
 
 import asciibreaker.model.Button;
+import asciibreaker.model.Paddle;
 
 import java.io.IOException;
 
@@ -12,6 +13,6 @@ public interface GUI {
 
     void drawButton(Button button);
     void drawMenuBackground();
-
+    public void drawPaddle(Paddle paddle);
 }
 

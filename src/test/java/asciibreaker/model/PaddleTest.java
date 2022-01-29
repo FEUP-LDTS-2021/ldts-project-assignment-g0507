@@ -4,30 +4,35 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class PaddleTest {
     Paddle paddle;
+
     @BeforeEach
     public void setUp() {
-        paddle = new Paddle(5,5);
+        paddle = new Paddle(new Position(5,5),new Position(10,3), "#0062d8");
     }
     @Test
-    void moveRight() {
-        Assertions.assertEquals(6, paddle.moveRight().getX());
+    void testMoveRight() {
+        paddle.moveRight();
+        Assertions.assertEquals(new Position(10,5).getX(), paddle.getUpperLeft().getX());
+        Assertions.assertEquals(new Position(15,3).getX(), paddle.getLowerRight().getX());
     }
+
     @Test
-    void moveLeft() {
-        Assertions.assertEquals(4, paddle.moveLeft().getX());
+    void testMoveLeft() {
+        paddle.moveLeft();
+        Assertions.assertEquals(new Position(0,5).getX(), paddle.getUpperLeft().getX());
+        Assertions.assertEquals(new Position(5,3).getX(), paddle.getLowerRight().getX());
     }
+
     @Test
-    void setPosition() {
-        Assertions.assertEquals(5,5);
+    void testGetPaddleColor() {
+        Assertions.assertEquals("#0062d8", paddle.getPaddleColor());
     }
+
     @Test
-    void testReset(){
-        Position position = new Position(30,30);
-        position.reset();
-        Assertions.assertEquals(position, new Position(40,40));
+    void testGetLives() {
+        Assertions.assertEquals(3, paddle.getLives());
     }
+
 }
