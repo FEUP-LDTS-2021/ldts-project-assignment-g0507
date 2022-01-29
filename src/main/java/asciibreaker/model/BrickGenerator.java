@@ -15,7 +15,7 @@ public class BrickGenerator {
 
     public void generateLvl1(){
         Random obj = new Random();
-        for(int i = 1; i < Config.TERMINAL_WIDTH - 3; i=i+2)
+        for(int i = 1; i < Config.TERMINAL_WIDTH - 3; i=i+3)
         {
             for(int j = Config.TERMINAL_HEIGHT - 1; j > Config.TERMINAL_HEIGHT - 6; j--)
             {

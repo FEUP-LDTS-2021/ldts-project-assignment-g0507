@@ -1,10 +1,8 @@
 package asciibreaker.gui;
 
-import asciibreaker.model.Brick;
-import asciibreaker.model.Paddle;
-import asciibreaker.model.Position;
-import com.googlecode.lanterna.SGR;
+import asciibreaker.model.*;
 import asciibreaker.model.Button;
+import com.googlecode.lanterna.SGR;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
@@ -19,7 +17,6 @@ import com.googlecode.lanterna.terminal.swing.SwingTerminalFontConfiguration;
 
 import java.awt.*;
 import java.io.IOException;
-import java.util.List;
 
 public class LanternaGUI implements GUI {
     private final Screen screen;
@@ -120,5 +117,11 @@ public class LanternaGUI implements GUI {
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setBackgroundColor(TextColor.Factory.fromString(brick.getBrickColor()));
         drawRectangle(graphics, brick.getUpperLeft(), brick.getLowerRight());
+    }
+
+    public void drawBall(Ball ball) {
+        TextGraphics graphics = screen.newTextGraphics();
+        graphics.setBackgroundColor(TextColor.Factory.fromString(ball.getBallColor()));
+        drawRectangle(graphics, ball.getUpperLeft(), ball.getLowerRight());
     }
 }

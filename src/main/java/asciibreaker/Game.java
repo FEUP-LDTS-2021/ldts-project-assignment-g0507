@@ -25,7 +25,7 @@ public class Game {
     }
 
     public void run() throws IOException {
-        int fps = 60;
+        int fps = 30;
         int frameTime = 1000/fps;
 
         while (running) {

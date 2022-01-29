@@ -1,5 +1,6 @@
 package asciibreaker.gui;
 
+import asciibreaker.model.Ball;
 import asciibreaker.model.Brick;
 import asciibreaker.model.Button;
 import asciibreaker.model.Paddle;
@@ -7,6 +8,8 @@ import asciibreaker.model.Paddle;
 import java.io.IOException;
 
 public interface GUI {
+
+
 
     enum PressedKey {UP,DOWN,RIGHT,LEFT,OTHER,ESCAPE, ENTER};
     PressedKey getKeyInput() throws IOException;
@@ -17,5 +20,6 @@ public interface GUI {
     void drawMenuBackground();
     void drawPaddle(Paddle paddle);
     void drawBrick(Brick brick);
+    void drawBall(Ball ball);
 }
 
