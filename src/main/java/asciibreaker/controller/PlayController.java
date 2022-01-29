@@ -12,6 +12,7 @@ public class PlayController extends Controller<PlayMenu> {
 
     public PlayController(PlayMenu menuModel) {
         super(menuModel);
+        getModel().getBrickGenerator().generateLvl1();
     }
     @Override
     public void step(Game game, GUI.PressedKey action, long time) throws IOException {

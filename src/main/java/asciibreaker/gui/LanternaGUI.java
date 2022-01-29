@@ -1,5 +1,6 @@
 package asciibreaker.gui;
 
+import asciibreaker.model.Brick;
 import asciibreaker.model.Paddle;
 import asciibreaker.model.Position;
 import com.googlecode.lanterna.SGR;
@@ -113,5 +114,11 @@ public class LanternaGUI implements GUI {
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setBackgroundColor(TextColor.Factory.fromString(paddle.getPaddleColor()));
         drawRectangle(graphics, paddle.getUpperLeft(), paddle.getLowerRight());
+    }
+
+    public void drawBrick(Brick brick) {
+        TextGraphics graphics = screen.newTextGraphics();
+        graphics.setBackgroundColor(TextColor.Factory.fromString(brick.getBrickColor()));
+        drawRectangle(graphics, brick.getUpperLeft(), brick.getLowerRight());
     }
 }
