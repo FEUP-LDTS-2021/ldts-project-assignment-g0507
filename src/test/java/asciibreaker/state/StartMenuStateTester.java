@@ -3,7 +3,6 @@ package asciibreaker.state;
 import asciibreaker.Game;
 import asciibreaker.controller.StartMenuController;
 import asciibreaker.model.StartMenu;
-import asciibreaker.viewer.StartMenuViewer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
