@@ -32,6 +32,8 @@ public class Paddle {
         return lowerRight;
     }
 
+    public void setLives(int lives) { this.lives = lives; }
+
     public int getLives() { return lives; }
 
     public String getPaddleColor() { return this.paddleColor;

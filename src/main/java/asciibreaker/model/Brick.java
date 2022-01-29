@@ -23,7 +23,7 @@ public class Brick {
 
     public String getBrickColor() { return this.brickColor; }
 
-    public int getHP() {
-        return this.hp;
-    }
+    public int getHP() { return this.hp; }
+
+    public void setHP(int hp) { this.hp = hp; }
 }
