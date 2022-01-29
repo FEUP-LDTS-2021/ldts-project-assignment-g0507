@@ -1,6 +1,7 @@
 package asciibreaker.viewer;
 
 import asciibreaker.gui.GUI;
+import asciibreaker.model.Paddle;
 import asciibreaker.model.PlayMenu;
 
 import java.io.IOException;
@@ -12,5 +13,6 @@ public class PlayViewer extends Viewer<PlayMenu> {
     @Override
     public void drawElements(GUI gui) throws IOException {
         gui.drawMenuBackground();
+        gui.drawPaddle(getModel().getPaddle());
     }
 }

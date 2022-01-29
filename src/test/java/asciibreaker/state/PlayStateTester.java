@@ -14,14 +14,14 @@ import java.io.IOException;
 public class PlayStateTester {
 
     private PlayState test;
-    private PlayMenu startMenu;
+    private PlayMenu playMenu;
     private Game game;
 
     @BeforeEach
     void setUp() throws IOException {
         game = new Game();
-        startMenu = new PlayMenu(new Game());
-        test = new PlayState(startMenu);
+        playMenu = new PlayMenu(new Game());
+        test = new PlayState(playMenu);
     }
 
     @AfterEach
@@ -31,15 +31,16 @@ public class PlayStateTester {
 
     @Test
     void testGetModel(){
-        Assertions.assertEquals(startMenu,test.getModel());
+        Assertions.assertEquals(playMenu,test.getModel());
     }
+
     @Test
     void testGetViewer(){
-        Assertions.assertEquals(new PlayViewer(startMenu).getModel(), test.getViewer().getModel());
+        Assertions.assertEquals(new PlayViewer(playMenu).getModel(), test.getViewer().getModel());
     }
     @Test
     void testGetController(){
-        PlayController controller = new PlayController(startMenu);
+        PlayController controller = new PlayController(playMenu);
         Assertions.assertEquals(controller.getModel(), test.getController().getModel());
     }
 }

@@ -1,5 +1,6 @@
 package asciibreaker.gui;
 
+import asciibreaker.model.Paddle;
 import asciibreaker.model.Position;
 import com.googlecode.lanterna.SGR;
 import asciibreaker.model.Button;
@@ -27,7 +28,7 @@ public class LanternaGUI implements GUI {
         screen = createScreen(terminal);
     }
 
-    public Screen getScreen(){
+    public Screen getScreen() {
         return screen;
     }
 
@@ -47,16 +48,20 @@ public class LanternaGUI implements GUI {
         return screen;
     }
 
-    public PressedKey getKeyInput() throws IOException{
+    public PressedKey getKeyInput() throws IOException {
         KeyStroke keyStroke = screen.pollInput();
-        while(screen.pollInput() != null);
+        while (screen.pollInput() != null) ;
         if (keyStroke == null) return PressedKey.OTHER;
         if (keyStroke.getKeyType() == KeyType.Escape) return PressedKey.ESCAPE;
-        else if (keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter()=='w' ||keyStroke.getCharacter()=='W')) return PressedKey.UP;
-        else if (keyStroke.getKeyType() ==  KeyType.Character && (keyStroke.getCharacter()=='d' ||keyStroke.getCharacter()=='D')) return PressedKey.RIGHT;
-        else if (keyStroke.getKeyType() ==  KeyType.Character && (keyStroke.getCharacter()=='s' ||keyStroke.getCharacter()=='S')) return PressedKey.DOWN;
-        else if (keyStroke.getKeyType() ==  KeyType.Character && (keyStroke.getCharacter()=='a' ||keyStroke.getCharacter()=='A')) return PressedKey.LEFT;
-        else if (keyStroke.getKeyType() ==  KeyType.Enter) return PressedKey.ENTER;
+        else if (keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter() == 'w' || keyStroke.getCharacter() == 'W'))
+            return PressedKey.UP;
+        else if (keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter() == 'd' || keyStroke.getCharacter() == 'D'))
+            return PressedKey.RIGHT;
+        else if (keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter() == 's' || keyStroke.getCharacter() == 'S'))
+            return PressedKey.DOWN;
+        else if (keyStroke.getKeyType() == KeyType.Character && (keyStroke.getCharacter() == 'a' || keyStroke.getCharacter() == 'A'))
+            return PressedKey.LEFT;
+        else if (keyStroke.getKeyType() == KeyType.Enter) return PressedKey.ENTER;
         else return PressedKey.OTHER;
     }
 
@@ -70,38 +75,43 @@ public class LanternaGUI implements GUI {
 
     public void drawButton(Button button) {
         TextGraphics graphics = screen.newTextGraphics();
-        if(button.isActive()){
+        if (button.isActive()) {
             graphics.setBackgroundColor(TextColor.Factory.fromString("#142930"));
-        }
-        else {
+        } else {
             graphics.setBackgroundColor(TextColor.Factory.fromString(button.getButtonColor()));
 
         }
         graphics.setForegroundColor(TextColor.Factory.fromString(button.getTextColor()));
         drawRectangle(graphics, button.getUpperLeft(), button.getLowerRight());
-        int yOffset=(button.getUpperLeft().getY()-button.getLowerRight().getY()-button.getButtonText().size())/2;
-        int xOffset=(button.getLowerRight().getX()-button.getUpperLeft().getX()-button.getButtonText().get(0).length())/2;
+        int yOffset = (button.getUpperLeft().getY() - button.getLowerRight().getY() - button.getButtonText().size()) / 2;
+        int xOffset = (button.getLowerRight().getX() - button.getUpperLeft().getX() - button.getButtonText().get(0).length()) / 2;
 
-        for(int i=0;i<button.getButtonText().size();i++){
-            if(button.getButtonText().get(i) != " "){
-                graphics.putString(  button.getUpperLeft().getX() + xOffset,  Config.TERMINAL_HEIGHT-button.getUpperLeft().getY()+yOffset +i,button.getButtonText().get(i),SGR.BOLD);
+        for (int i = 0; i < button.getButtonText().size(); i++) {
+            if (button.getButtonText().get(i) != " ") {
+                graphics.putString(button.getUpperLeft().getX() + xOffset, Config.TERMINAL_HEIGHT - button.getUpperLeft().getY() + yOffset + i, button.getButtonText().get(i), SGR.BOLD);
             }
         }
     }
 
     private void drawRectangle(TextGraphics graphics, Position upperLeft, Position lowerRight) {
-        for(int i = upperLeft.getX(); i <= lowerRight.getX(); i++ )
-            for(int j = Config.TERMINAL_HEIGHT-upperLeft.getY(); j <= Config.TERMINAL_HEIGHT-lowerRight.getY(); j++)
+        for (int i = upperLeft.getX(); i <= lowerRight.getX(); i++)
+            for (int j = Config.TERMINAL_HEIGHT - upperLeft.getY(); j <= Config.TERMINAL_HEIGHT - lowerRight.getY(); j++)
                 graphics.putString(new TerminalPosition(i, j), " ");
     }
 
-    public void fillBackground(String color){
+    public void fillBackground(String color) {
         TextGraphics graphics = screen.newTextGraphics();
         graphics.setBackgroundColor(TextColor.Factory.fromString(color));
         graphics.fillRectangle(new TerminalPosition(0, 0), new TerminalSize(Config.TERMINAL_WIDTH, Config.TERMINAL_HEIGHT), ' ');
     }
 
-    public void drawMenuBackground(){
+    public void drawMenuBackground() {
         fillBackground("#446699");
+    }
+
+    public void drawPaddle(Paddle paddle) {
+        TextGraphics graphics = screen.newTextGraphics();
+        graphics.setBackgroundColor(TextColor.Factory.fromString(paddle.getPaddleColor()));
+        drawRectangle(graphics, paddle.getUpperLeft(), paddle.getLowerRight());
     }
 }
