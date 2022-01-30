@@ -66,7 +66,7 @@ public class StartMenuControllerTest {
 
     @Test
     void testEscape() throws IOException{
-        test.getOptions().get(1).getAction().execute();
+        test.getOptions().get(2).getAction().execute();
         menuController.step(game, GUI.PressedKey.ESCAPE,0);
         Assertions.assertEquals(test,menuController.getModel());
     }
