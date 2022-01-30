@@ -109,8 +109,14 @@ public class LanternaGUI implements GUI {
 
     public void drawPaddle(Paddle paddle) {
         TextGraphics graphics = screen.newTextGraphics();
+        TextGraphics HP = screen.newTextGraphics();
         graphics.setBackgroundColor(TextColor.Factory.fromString(paddle.getPaddleColor()));
+        HP.setBackgroundColor(TextColor.Factory.fromString("#446699"));
+        HP.setForegroundColor(TextColor.Factory.fromString("#000000"));
         drawRectangle(graphics, paddle.getUpperLeft(), paddle.getLowerRight());
+        String string = paddle.getLives() + " Lives left";
+        HP.putString(1,Config.TERMINAL_HEIGHT - 1, string, SGR.BOLD);
+
     }
 
     public void drawBrick(Brick brick) {
