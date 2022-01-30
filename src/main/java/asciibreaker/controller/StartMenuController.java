@@ -14,17 +14,19 @@ public class StartMenuController extends Controller<StartMenu> {
     @Override
     public void step(Game game, GUI.PressedKey action, long time) throws IOException {
         switch (action) {
-            case LEFT, UP:
+            case UP:
+            case LEFT:
                 getModel().previousOption();
                 break;
-            case RIGHT, DOWN:
+            case RIGHT:
+            case DOWN:
                 getModel().nextOption();
                 break;
             case ENTER:
                 getModel().getSelectedButton().getAction().execute();
                 break;
             case ESCAPE:
-                getModel().getOptions().get(1).getAction().execute();
+                getModel().getOptions().get(2).getAction().execute();
                 break;
             default:
                 break;

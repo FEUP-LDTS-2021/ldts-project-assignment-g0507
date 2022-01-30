@@ -14,10 +14,12 @@ public class GameOverController extends Controller<GameOverMenu> {
     @Override
     public void step(Game game, GUI.PressedKey action, long time) throws IOException {
         switch (action) {
-            case LEFT, UP:
+            case UP:
+            case LEFT:
                 getModel().previousOption();
                 break;
-            case RIGHT, DOWN:
+            case RIGHT:
+            case DOWN:
                 getModel().nextOption();
                 break;
             case ENTER:
