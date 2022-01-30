@@ -8,6 +8,7 @@ import asciibreaker.gui.GUI;
 import asciibreaker.model.Brick;
 import asciibreaker.model.PlayMenu;
 import asciibreaker.model.Position;
+import asciibreaker.model.StartMenu;
 
 import java.io.IOException;
 
@@ -38,6 +39,9 @@ public class PlayController extends Controller<PlayMenu> {
 
         if(getModel().getPaddle().getLives() == 0) {
             new GameOverCommand(game).execute();
+        }
+        if(getModel().getBricks().size() == 0) {
+            new StartMenuCommand(game).execute();
         }
 
         checkCollisions();
