@@ -180,5 +180,5 @@ We have complicated boolean expressions used in our collision detection function
 | Name                 |     Contribution     |
 | -------------------- | -------------------- | 
 | André Cruz           |         3/3          |
-| Angy da Cruz         |                      |
+| Angy da Cruz         |         1/3          |
 | Ana Reis             |                      |
