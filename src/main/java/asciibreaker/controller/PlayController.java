@@ -1,6 +1,7 @@
 package asciibreaker.controller;
 
 import asciibreaker.Game;
+import asciibreaker.controller.command.GameOverCommand;
 import asciibreaker.controller.command.StartMenuCommand;
 import asciibreaker.gui.Config;
 import asciibreaker.gui.GUI;
@@ -34,9 +35,11 @@ public class PlayController extends Controller<PlayMenu> {
             default:
                 break;
         }
+
         if(getModel().getPaddle().getLives() == 0) {
-            new StartMenuCommand(game).execute();
+            new GameOverCommand(game).execute();
         }
+
         checkCollisions();
         checkBricks();
         getModel().getBall().update();
